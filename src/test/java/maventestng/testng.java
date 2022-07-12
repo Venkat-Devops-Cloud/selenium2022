@@ -1,4 +1,4 @@
-//sample  
+//sample  program
 package maventestng;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
