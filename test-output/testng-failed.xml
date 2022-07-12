@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="browser" value="edge"/>
+  <test name="EdgeTest">
+    <parameter name="browser" value="edge"/>
+    <classes>
+      <class name="maventestng.multibrowser"/>
+    </classes>
+  </test> <!-- EdgeTest -->
+  <test name="ChromeTest">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="maventestng.testng"/>
+    </classes>
+  </test> <!-- ChromeTest -->
+  <test name="anotherapplication">
+    <parameter name="browser" value="edge"/>
+    <classes>
+      <class name="maventestng.testngmaven"/>
+    </classes>
+  </test> <!-- anotherapplication -->
+  <test parallel="tests" name="anotherapplication(failed)">
+    <parameter name="browser" value="edge"/>
+    <classes>
+      <class name="maventestng.testngmaven">
+        <methods>
+          <include name="verifyHomepage1Title"/>
+        </methods>
+      </class> <!-- maventestng.testngmaven -->
+      <class name="maventestng.multibrowser">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- maventestng.multibrowser -->
+    </classes>
+  </test> <!-- anotherapplication(failed) -->
+  <test parallel="tests" name="ChromeTest(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="maventestng.multibrowser">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- maventestng.multibrowser -->
+      <class name="maventestng.testng">
+        <methods>
+          <include name="verifyHomepage1Title"/>
+        </methods>
+      </class> <!-- maventestng.testng -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->
