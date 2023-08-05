@@ -58,7 +58,7 @@ public class multibrowser {
 
   @AfterClass public void afterTest() {
 
-		driver.quit();
+		driver.quit
 
 	}
 
